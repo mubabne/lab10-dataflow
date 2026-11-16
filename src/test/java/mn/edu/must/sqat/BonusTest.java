@@ -40,4 +40,9 @@ class BonusTest {
     void longStreakBelowThreshold() {
         assertEquals(3, DataFlowTargets.bonus(new int[]{1, 0, 1, 1, 1, 1, 1}, 7));
     }
+
+    @Test
+    void separatedDaysDoNotMakeFiveDayStreak() {
+        assertEquals(5, DataFlowTargets.bonus(new int[]{1, 0, 1, 1, 1, 1}, 5));
+    }
 }
